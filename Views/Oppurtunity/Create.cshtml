@@ -1,0 +1,41 @@
+@model AcxiomCRM.Models.Opportunity
+
+@{
+    ViewData["Title"] = "Create Opportunity";
+}
+
+<div class="container mt-4">
+    <h2>Create Opportunity</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="OpportunityName" class="control-label"></label>
+                    <input asp-for="OpportunityName" class="form-control" />
+                    <span asp-validation-for="OpportunityName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Probability" class="control-label"></label>
+                    <input asp-for="Probability" class="form-control" />
+                    <span asp-validation-for="Probability" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ExpectedCloseDate" class="control-label"></label>
+                    <input asp-for="ExpectedCloseDate" type="date" class="form-control" />
+                    <span asp-validation-for="ExpectedCloseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

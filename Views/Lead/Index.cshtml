@@ -1,0 +1,39 @@
+@model IEnumerable<AcxiomCRM.Models.Lead>
+
+@{
+    ViewData["Title"] = "Leads";
+}
+
+<div class="container mt-4">
+    <h2>Leads</h2>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New Lead</a>
+    </p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Lead Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Source</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@item.LeadName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.LeadSource</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.LeadId" class="btn btn-sm btn-warning">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
